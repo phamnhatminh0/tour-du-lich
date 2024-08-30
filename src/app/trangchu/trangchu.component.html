@@ -1,0 +1,145 @@
+<!-- banner động -->
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href=""><img src="../assets/upload/tour-phu-quoc.jpg" class="d-block w-100" alt="..."></a>
+
+        </div>
+        <div class="carousel-item">
+            <a href=""><img src="../assets/upload/tour-thai-lan.jpg" class="d-block w-100" alt="..."></a>
+        </div>
+        <div class="carousel-item">
+            <a href=""><img src="../assets/upload/backinh.jpg" class="d-block w-100" alt="..."></a>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- /banner động -->
+
+<!-- TOUR HOT -->
+<div class="container">
+    <h2 class="fw-semibold text-center text-danger mt-4 text-decoration-underline">TOUR HOT Việt Nam</h2>
+    <h4 class="text-center fw-light">khám phá mọi chân trời Đất Nước Ta</h4>
+    <div class="row mt-2">
+        <div class="col-sm-6 my-1" *ngFor="let p of tourhottrongnuoc | slice:0:1">
+            <div class="card position-relative">
+                <img src="../assets/upload/{{p.img}}" class="card-img-top" alt="...">
+                <div class="">
+                    <h4 class="mt-2">{{p.tenTour}}</h4>
+                    <p>{{p.giChuNgan}}</p>
+                    <p class="card-text"><strong class="text-warning fw-bold mx-1 fs-5">{{p.giaTour}} VND
+                        </strong></p>
+                    <div class="text-center w-100"><a [routerLink]="['/chitietsangpham', p.id]"
+                            class="btn btn-light mb-3">Xem ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row row-cols-2">
+                <div class="col col-sm-6 mb-3 " *ngFor="let p of tourhottrongnuoc | slice:1:5">
+                    <div class="card position-relative">
+                        <img src="../assets/upload/{{p.img}}" class="card-img-top" alt="...">
+                        <div class="">
+                            <h5 class="mt-2">{{p.tenTour}}
+                            </h5>
+                            <P>{{p.giChuNgan}}</P>
+                            <p class="card-text mt-2"><strong class="text-warning fw-bold mx-1">{{p.giaTour}} VND
+                                </strong></p>
+                            <div class="text-center w-100"><a [routerLink]="['/chitietsangpham', p.id]"
+                                    class="btn btn-light mb-2">Xem ngay</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /TOUR HOT -->
+
+<!-- điểm đến nổi bật -->
+<div class="container">
+    <h2 class="fw-semibold text-center text-danger mt-4 text-decoration-underline">ĐIỂM ĐẾN NỔI BẬT</h2>
+    <h4 class="text-center fw-light">TOP điểm đến hấp dẫn bạn nên khám phá</h4>
+    <div class="row text-center fw-semibold text-bg-light">
+        <div class=" col-lg-3 mt-3">
+            <a href="" class="link-offset-2 link-underline link-underline-opacity-0">
+
+                <div class="card">
+                    <img src="../assets/upload/danang.jpg" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body bg-secondary">
+                        <p class="card-text text-light">ĐÀ NẴNG</p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        <div class=" col-lg-3 mt-3">
+            <a href="" class="link-offset-2 link-underline link-underline-opacity-0">
+                <div class="card">
+                    <img src="../assets/upload/HUE.jpg" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body bg-secondary">
+                        <p class="card-text text-light">HUẾ</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class=" col-lg-3 mt-3">
+            <a href="" class="link-offset-2 link-underline link-underline-opacity-0">
+                <div class="card">
+                    <img src="../assets/upload/HOIAN.jpg" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body bg-secondary">
+                        <p class="card-text text-light">HỘI AN</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class=" col-lg-3 mt-3">
+            <a href="" class="link-offset-2 link-underline link-underline-opacity-0">
+                <div class="card">
+                    <img src="../assets/upload/NINHBINH.jpg" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body bg-secondary">
+                        <p class="card-text text-light">NINH BÌNH</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+</div>
+<!-- /điểm đến nổi bật -->
+
+<!-- tour hot nước ngoài -->
+<div class="container">
+    <h2 class="fw-semibold text-center text-danger mt-4 text-decoration-underline">TOUR HOT NƯỚC NGOÀI</h2>
+    <h4 class="text-center fw-light">Khám phá năm châu bốn bể</h4>
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let p of tourhotngoainuoc | slice:0:4">
+            <div class="card position-relative">
+                <img src="../assets/upload/{{p.img}}" class="card-img-top" alt="...">
+                <div class="">
+                    <h4 class="mt-2">{{p.tenTour}}</h4>
+                    <p>>{{p.giChuNgan}}</p>
+                    <p class="card-text"><strong class="text-warning fw-bold mx-1 fs-5">{{p.giaTour}} VND
+                        </strong></p>
+                    <div class="text-center w-100"><a [routerLink]="['/chitietsangpham', p.id]"
+                            class="btn btn-light mb-3">Xem ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!-- /tour hot nước ngoài -->

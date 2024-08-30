@@ -1,0 +1,52 @@
+<!-- danh mục -->
+<div class="container">
+
+    <!-- đường dẫn -->
+    <p class="fs-4 text-start ">
+        <i class="bi bi-house"></i>
+        <a href="" class="link-offset-2 link-underline link-underline-opacity-0">
+            <span> Trang chủ </span>
+        </a>/
+        <span>TOUR TRONG NƯỚC</span>
+    </p>
+    <!-- /đường dẫn -->
+    <!-- các danh mục -->
+    <div class="row mt-3">
+
+
+        <!-- phân loại -->
+        <div class="col-sm-12 col-md-3">
+            <p class="fs-3 fw-medium">sắp xếp theo</p>
+            <select class="form-select" [(ngModel)]="selectedSort" (change)="onSortChange()">
+                <option selected>Mặt định</option>
+                <option value="asc">giá từ cao đến thấp</option>
+                <option value="desc">giá từ thấp đến cao</option>
+            </select>
+        </div>
+        <!-- /phân loại -->
+
+        <!-- sảng phẩm -->
+        <div class="col-sm-12 col-md-9">
+            <div class="row ">
+                <h3>nhật bản</h3>
+                <div class="col-sm-12 col-md-4 mb-3" *ngFor="let p of danhmuctrongnuoc">
+                    <div class="card position-relative" style="height: 550px;">
+                        <img src="../assets/upload/{{p.img}}" class="card-img-top" alt="...">
+                        <div class="">
+                            <h4 class="mt-2">{{p.tenTour}}</h4>
+                            <p>{{p.giChuNgan}}</p>
+                            <p class="card-text"><strong class="text-warning fw-bold mx-1 fs-5">{{p.giaTour}} VND
+                                </strong></p>
+                            <div class="text-center w-100"><a [routerLink]="['/chitietsangpham', p.id]"
+                                    class="btn btn-light mb-3">Xem ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /sảng phẩm -->
+    </div>
+    <!-- /các danh mục -->
+</div>
+<!-- /danh mục -->
